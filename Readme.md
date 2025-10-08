@@ -18,7 +18,7 @@ and [Lizhuang Ma](https://dmcv.sjtu.edu.cn/)
 
 ## 📖 Overview
 
-**IAR2** is a novel approach for improving autoregressive visual generation through semantic-detail associated token prediction.
+**IAR2** is a novel approach for improving autoregressive visual generation through semantic-detail associated token prediction, which can reach the state-of-the-art **FID=1.50** on ImageNet dataset.
 **IAR2** builds upon [**IAR**](https://github.com/sjtuplayer/IAR), which is published in CVPR 2025.
 This repository contains the official implementation of our method, including training scripts, evaluation tools, and pre-trained models.
 
