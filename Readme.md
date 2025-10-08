@@ -18,7 +18,9 @@ and [Lizhuang Ma](https://dmcv.sjtu.edu.cn/)
 
 ## 📖 Overview
 
-IAR2 is a novel approach for improving autoregressive visual generation through semantic-detail associated token prediction. This repository contains the official implementation of our method, including training scripts, evaluation tools, and pre-trained models.
+**IAR2** is a novel approach for improving autoregressive visual generation through semantic-detail associated token prediction.
+**IAR2** builds upon [**IAR**](https://github.com/sjtuplayer/IAR), which is published in CVPR 2025.
+This repository contains the official implementation of our method, including training scripts, evaluation tools, and pre-trained models.
 
 <div align="center">
 
@@ -46,9 +48,9 @@ pip install -r requirements.txt
 
 ### VQ Models (VQGAN)
 
-| Model   | Codebook Size | Embedding Dim | Image Size | Download Link                                                                        |
-|---------|---------------|---------------|------------|--------------------------------------------------------------------------------------|
-| `VQGAN` | 256/4096 | 8/8           | 256×256 | [VQGAN](https://huggingface.co/JTUplayer/IAR2/resolve/main/0485000.pt?download=true) |
+| Model   | Codebook Size | Embedding Dim | rFID | Download Link                                                                        |
+|---------|---------------|---------------|------|--------------------------------------------------------------------------------------|
+| `VQGAN` | 256/4096 | 8/8           | 1.05 | [VQGAN](https://huggingface.co/JTUplayer/IAR2/resolve/main/0485000.pt?download=true) |
 
 
 **Note:** VQ models support two-stage training:
