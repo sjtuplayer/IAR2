@@ -60,14 +60,14 @@ pip install -r requirements.txt
 
 ### Autoregressive Models
 
-| Model     | Parameters | Layers | Hidden Size | Attention Heads | FID  | Download Link                                                                             |
-|-----------|------------|--------|-------------|-----------------|------|-------------------------------------------------------------------------------------------|
-| `IAR2-B`  | ~140M | 12 | 768 | 12 | 4.80 | [IAR2-B](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-B.pth?download=true)     |
-| `IAR2-L`   | ~400M | 24 | 1024 | 16 | 2.76 | [IAR2-L](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-L.pth?download=true)     |
-| `IAR2-XL`  | ~900M | 36 | 1280 | 20 | 2.10 | [IAR2-XL](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-XL.pt?download=true)    |
-| `IAR2-XXL` | ~1.5B | 48 | 1536 | 24 | 1.76 | [IAR2-XXL](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-XXL.pth?download=true) |
+| Model     | Parameters | Layers | Hidden Size | Attention Heads | FID          | Download Link                                                                             |
+|-----------|------------|--------|-------------|-----------------|--------------|-------------------------------------------------------------------------------------------|
+| `IAR2-B`  | ~140M | 12 | 768 | 12 | 4.80         | [IAR2-B](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-B.pth?download=true)     |
+| `IAR2-L`   | ~400M | 24 | 1024 | 16 | 2.76         | [IAR2-L](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-L.pth?download=true)     |
+| `IAR2-XL`  | ~900M | 36 | 1280 | 20 | 2.10         | [IAR2-XL](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-XL.pt?download=true)    |
+| `IAR2-XXL` | ~1.5B | 48 | 1536 | 24 | 1.76 (1.50*) | [IAR2-XXL](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-XXL.pth?download=true) |
 
-
+**Note:** FID=1.50 can be reached by reject sampling.
 
 
 ## 🔧 Usage
