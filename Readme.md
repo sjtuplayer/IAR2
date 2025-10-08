@@ -10,7 +10,7 @@ and [Lizhuang Ma](https://dmcv.sjtu.edu.cn/)
 
 <div align="center">
 
-![IAR2](figs/img.png)
+![IAR2](figs/performance_comparison.png)
 
 </div>
 
@@ -19,6 +19,12 @@ and [Lizhuang Ma](https://dmcv.sjtu.edu.cn/)
 ## 📖 Overview
 
 IAR2 is a novel approach for improving autoregressive visual generation through semantic-detail associated token prediction. This repository contains the official implementation of our method, including training scripts, evaluation tools, and pre-trained models.
+
+<div align="center">
+
+![IAR2](figs/img.png)
+
+</div>
 
 ## 🚀 Quick Start
 
@@ -35,6 +41,32 @@ git clone https://github.com/sjtuplayer/IAR2.git
 cd IAR2
 pip install -r requirements.txt
 ```
+
+## 📦 Pre-trained Models
+
+### VQ Models (VQGAN)
+
+| Model   | Codebook Size | Embedding Dim | Image Size | Download Link                                                                        |
+|---------|---------------|---------------|------------|--------------------------------------------------------------------------------------|
+| `VQGAN` | 256/4096 | 8/8           | 256×256 | [VQGAN](https://huggingface.co/JTUplayer/IAR2/resolve/main/0485000.pt?download=true) |
+
+
+**Note:** VQ models support two-stage training:
+- Stage 1: Semantic codebook (size=256, embed_dim=8)
+- Stage 2: Semantic-detail associated codebook (size=4096, embed_dim=8)
+
+
+### Autoregressive Models
+
+| Model     | Parameters | Layers | Hidden Size | Attention Heads | FID  | Download Link                                                                             |
+|-----------|------------|--------|-------------|-----------------|------|-------------------------------------------------------------------------------------------|
+| `IAR2-B`  | ~140M | 12 | 768 | 12 | 4.80 | [IAR2-B](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-B.pth?download=true)     |
+| `IAR2-L`   | ~400M | 24 | 1024 | 16 | 2.76 | [IAR2-L](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-L.pth?download=true)     |
+| `IAR2-XL`  | ~900M | 36 | 1280 | 20 | 2.10 | [IAR2-XL](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-XL.pt?download=true)    |
+| `IAR2-XXL` | ~1.5B | 48 | 1536 | 24 | 1.76 | [IAR2-XXL](https://huggingface.co/JTUplayer/IAR2/resolve/main/IAR2-XXL.pth?download=true) |
+
+
+
 
 ## 🔧 Usage
 
@@ -116,14 +148,14 @@ The AR training involves extracting visual codes, training the autoregressive mo
 
 ### 🎛️ Model Architecture Selection
 
-Our framework supports multiple GPT model architectures with different scales. You can choose the appropriate model size based on your computational resources and performance requirements:
+Our framework supports multiple architectures with different scales. You can choose the appropriate model size based on your computational resources and performance requirements:
 
-| Model | Parameters | Layers | Hidden Size | Attention Heads | Description |
-|-------|------------|--------|-------------|-----------------|-------------|
-| `GPT-B` | ~140M      | 12 | 768 | 12 | Base model, good balance of performance and efficiency |
-| `GPT-L` | ~400M      | 24 | 1024 | 16 | Large model, better generation quality |
-| `GPT-XL` | ~900B      | 36 | 1280 | 20 | Extra large model, highest quality |
-| `GPT-XXL` | ~1.5B      | 48 | 1536 | 24 | Extra extra large model, best quality |
+| Model     | Parameters | Layers | Hidden Size | Attention Heads | Description |
+|-----------|------------|--------|-------------|-----------------|-------------|
+| `IAR2-B`  | ~140M      | 12 | 768 | 12 | Base model, good balance of performance and efficiency |
+| `IAR2-L`   | ~400M      | 24 | 1024 | 16 | Large model, better generation quality |
+| `IAR2-XL`  | ~900B      | 36 | 1280 | 20 | Extra large model, highest quality |
+| `IAR2-XXL` | ~1.5B      | 48 | 1536 | 24 | Extra extra large model, best quality |
 
 **💡 Usage:** Simply change the `--gpt-model` parameter in training and inference commands to switch between different model architectures.
 
